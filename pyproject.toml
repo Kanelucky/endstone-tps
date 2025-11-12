@@ -1,0 +1,14 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "endstone-tps"
+version = "0.1.0"
+authors = [
+    { name = "InventoryCore" }
+]
+description = "A simple plugin to show TPS with /tps."
+
+[project.entry-points."endstone"]
+tps = "endstone_tps:TPS"
