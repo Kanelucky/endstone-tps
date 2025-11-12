@@ -16,7 +16,7 @@ class TPS(Plugin):
         if command.name == "tps":
             tps = self.server.average_tps
             if tps >= 19:
-                sender.send_message(f"§eServer TPS: §f{tps:.2f}")
+                sender.send_message(f"§eServer TPS: §c{tps:.2f}")
             elif tps == 18:
                 sender.send_message(f"§eServer TPS: §e{tps:.2f}")
             elif tps <= 17:
