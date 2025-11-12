@@ -15,9 +15,13 @@ class TPS(Plugin):
     def on_command(self, sender: CommandSender, command: Command, args: list[str]) -> bool:
         if command.name == "tps":
             tps = self.server.average_tps
-            sender.send_message(f"§aServer TPS: §f{tps:.2f}")
-
-        return True
+            if tps >= 19:
+                sender.send_message(f"§eServer TPS: §f{tps:.2f}")
+            elif tps == 18:
+                sender.send_message(f"§eServer TPS: §e{tps:.2f}")
+            elif tps <= 17:
+                sender.send_message(f"§eServer TPS: §c{tps:.2f}")
+            return True
 
     def on_load(self) -> None:
         self.logger.info("on_load is called!")
