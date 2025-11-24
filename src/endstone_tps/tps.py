@@ -17,12 +17,13 @@ class TPS(Plugin):
             tps = self.server.average_tps
             if tps >= 19:
                 sender.send_message(f"§eServer TPS: §a{tps:.2f}")
-            elif tps == 18:
+            elif tps >= 18:
                 sender.send_message(f"§eServer TPS: §e{tps:.2f}")
-                self.logger.info(f"§eServer TPS is low now {tps:.2f}")
-            elif tps <= 17:
+                self.logger.info(f"§eServer TPS is LOW {tps:.2f}")
+            else:
                 sender.send_message(f"§eServer TPS: §c{tps:.2f}")
-                self.logger.info(f"§eServer TPS is low now {tps:.2f}")
+                self.logger.info(f"§eServer TPS is LOW {tps:.2f}")
+                
             return True
 
     def on_load(self) -> None:
